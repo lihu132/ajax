@@ -22,7 +22,7 @@
         const btn = document.getElementsByTagName('button')[0];
         const result = document.querySelector('#result')
 
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             //1.创建对象
             const xhr = new XMLHttpRequest();
             //2.初始化设置请求的方法和URL
@@ -33,7 +33,7 @@
             //on when当....的时候
             //readystate 是XHR的对象中的属性，表示状态 0被初始化 1open 2send 3服务端返回部分结果 4服务端返回所有结果
             //change 改变的时候触发
-            xhr.onreadystatechange = function() {
+            xhr.onreadystatechange = function () {
                 //判断xhr.readystate=4 表明服务端返回了所有的结果
                 if (xhr.readyState === 4) {
                     //判断响应状态码 200 404 403 401 500
