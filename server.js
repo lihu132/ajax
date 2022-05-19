@@ -65,6 +65,8 @@ app.all('/jquery-server', (request, response) => {
 
     //设置响应头,设置允许跨域
     response.setHeader('Access-Control-Allow-Origin', '*');
+    //自定义响应头
+    response.setHeader('Access-Control-Allow-Headers', '*');
 
     const data = {
         name: '尚硅谷'
