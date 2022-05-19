@@ -13,7 +13,7 @@ app.get('/server', (request, response) => {
     response.setHeader('Access-Control-Allow-Origin', '*');
 
     //设置响应体
-    response.send('Hello AJAX');
+    response.send('Hello AJAX -2');
 });
 
 //all 可以接受任意类型的请求 get post delete
