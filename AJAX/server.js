@@ -16,10 +16,14 @@ app.get('/server', (request, response) => {
     response.send('Hello AJAX');
 });
 
-app.post('/server', (request, response) => {
+//all 可以接受任意类型的请求 get post delete
+app.all('/server', (request, response) => {
 
     //设置响应头,设置允许跨域
     response.setHeader('Access-Control-Allow-Origin', '*');
+
+    //自定义响应头
+    response.setHeader('Access-Control-Allow-Headers', '*');
 
     //设置响应体
     response.send('Hello AJAX POST');
