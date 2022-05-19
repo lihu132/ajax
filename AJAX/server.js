@@ -17,7 +17,7 @@ app.get('/server', (request, response) => {
 });
 
 //all 可以接受任意类型的请求 get post delete
-app.all('/server', (request, response) => {
+app.all('/json-server', (request, response) => {
 
     //设置响应头,设置允许跨域
     response.setHeader('Access-Control-Allow-Origin', '*');
@@ -25,8 +25,16 @@ app.all('/server', (request, response) => {
     //自定义响应头
     response.setHeader('Access-Control-Allow-Headers', '*');
 
-    //设置响应体
-    response.send('Hello AJAX POST');
+    //响应一个数据
+    const data = {
+        name: 'guigu'
+    };
+
+    //进行字符串转化
+    let str = JSON.stringify(data);
+
+    //设置响应体 send只能字符串或者buffer
+    response.send(str);
 });
 
 //4.监听端口启动服务
