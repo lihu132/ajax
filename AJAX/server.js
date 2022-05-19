@@ -48,6 +48,18 @@ app.all('/ie', (request, response) => {
     response.send('HELLO IE -4');
 });
 
+//延时响应
+app.all('/delay', (request, response) => {
+
+    //设置响应头,设置允许跨域
+    response.setHeader('Access-Control-Allow-Origin', '*');
+
+    setTimeout(() => {
+        //设置响应体 send只能字符串或者buffer
+        response.send('延时响应');
+    }, 3000)
+});
+
 //4.监听端口启动服务
 app.listen(8000, () => {
     console.log("服务已经启动，8000端口监听中......");
