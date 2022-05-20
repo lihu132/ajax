@@ -140,6 +140,25 @@ app.all('/check-username', (request, response) => {
     response.end(`handle(${str})`);
 });
 
+//jquery-jsonp
+app.all('/jquery-jsonp-server', (request, response) => {
+    // response.send('console.log("hello JSONP")');
+
+    const data = {
+        name: '尚硅谷',
+        city: ['北京', '上海', '深圳']
+    };
+
+    //将数据转化为字符串
+    let str = JSON.stringify(data);
+
+    //接收callback产生的变量
+    let cb = request.query.callback;
+
+    //返回结果
+    response.end(`${cb}(${str})`);
+});
+
 //4.监听端口启动服务
 app.listen(8000, () => {
     console.log("服务已经启动，8000端口监听中......");
