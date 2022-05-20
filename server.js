@@ -129,7 +129,8 @@ app.all('/check-username', (request, response) => {
     // response.send('console.log("hello JSONP")');
 
     const data = {
-        name: '尚硅谷'
+        exist: 1,
+        msg: '用户名已经存在'
     };
 
     //将数据转化为字符串
