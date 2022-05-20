@@ -159,6 +159,18 @@ app.all('/jquery-jsonp-server', (request, response) => {
     response.end(`${cb}(${str})`);
 });
 
+//CORS响应
+app.all('/cors-server', (request, response) => {
+    //设置响应头,设置允许跨域
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    // response.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5000');
+    response.setHeader('Access-Control-Allow-Headers', '*');
+    response.setHeader('Access-Control-Allow-Method', '*');
+
+    response.send('hello CORS')
+});
+
+
 //4.监听端口启动服务
 app.listen(8000, () => {
     console.log("服务已经启动，8000端口监听中......");
