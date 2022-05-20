@@ -124,6 +124,21 @@ app.all('/jsonp-server', (request, response) => {
     response.end(`handle(${str})`);
 });
 
+//用户名检测是否存在
+app.all('/check-username', (request, response) => {
+    // response.send('console.log("hello JSONP")');
+
+    const data = {
+        name: '尚硅谷'
+    };
+
+    //将数据转化为字符串
+    let str = JSON.stringify(data);
+
+    //返回结果
+    response.end(`handle(${str})`);
+});
+
 //4.监听端口启动服务
 app.listen(8000, () => {
     console.log("服务已经启动，8000端口监听中......");
