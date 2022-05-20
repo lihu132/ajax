@@ -93,6 +93,21 @@ app.all('/axios-server', (request, response) => {
     response.send(JSON.stringify(data));
 });
 
+//fetch响应
+app.all('/fetch-server', (request, response) => {
+
+    //设置响应头,设置允许跨域
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    //自定义响应头
+    response.setHeader('Access-Control-Allow-Headers', '*');
+
+    const data = {
+        name: '尚硅谷'
+    }
+
+
+    response.send(JSON.stringify(data));
+});
 
 //4.监听端口启动服务
 app.listen(8000, () => {
